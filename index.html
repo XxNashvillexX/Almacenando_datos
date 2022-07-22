@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TODO App</title>
+    <link rel="icon" type="image/png" href="./assets/rocket.svg" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis&family=Open+Sans&family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <div class="mainCard">
+        <div class="title"><img src="./assets/rocket.svg" /></div>
+        <div>
+          <form action="">
+            <input
+              type="text"
+              name="task"
+              placeholder="Nombre de la tarea"
+              class="inputForm"
+              autocomplete="off"
+            />
+            <button type="submit" class="btnCreate">
+              Agregar <i class="fas fa-plus-circle"></i>
+            </button>
+          </form>
+        </div>
+        <ul class="cardsList">
+          <li class="card">
+            <div>
+              <i class="far fa-check-square icon"></i>
+              <span class="task">Hacer curso de DOM</span>
+            </div>
+            <i class="fas fa-trash-alt trashIcon icon"></i>
+          </li>
+          <li class="card">
+            <div>
+              <i class="far fa-check-square icon"></i>
+              <span class="task">Aprender más de mi amor, María</span>
+            </div>
+            <i class="fas fa-trash-alt trashIcon icon"></i>
+          </li>
+        </ul>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!--
+  Clase 1:  podemos usar comandos git desde la terminal, por ejemplo crear branchs (ramas).
+            Tener en cuenta que inspeccionando el objeto, podemos ver que parte del codigo esta representado en pantalla.
+            desde la consola del navegador, podemos ver todo el documento creado.
+            ARBOL de DOM: esquema donde se encuentra un elemento dentro de un arbol, donde un elemento esta dentro del otro.
+
+            Utilizamos el método querySelector para recorrer el árbol del DOM y encontrar el elemento que queremos utilizando JavaScript. Pero, existen otro métodos que pueden ser utilizados con la misma finalidad.
+
+document.getElementById(‘id’) selecciona el elemento por el id
+`document.getElementsByClassName(‘clase’) retorna un arreglo de los elementos por el nombre de la clase
+document.getElementsByTagName(‘tag’) retorna un arreglo de los elementos por el nombre del tag
+document.querySelectorAll(“selector”) regresa todos los elementos con el mismo nombre
+-->
