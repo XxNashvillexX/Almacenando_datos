@@ -29,8 +29,9 @@
               placeholder="Nombre de la tarea"
               class="inputForm"
               autocomplete="off"
+              data-form-input
             />
-            <button type="submit" class="btnCreate">
+            <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
           </form>
@@ -53,6 +54,7 @@
         </ul>
       </div>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
 
@@ -68,4 +70,13 @@ document.getElementById(‘id’) selecciona el elemento por el id
 `document.getElementsByClassName(‘clase’) retorna un arreglo de los elementos por el nombre de la clase
 document.getElementsByTagName(‘tag’) retorna un arreglo de los elementos por el nombre del tag
 document.querySelectorAll(“selector”) regresa todos los elementos con el mismo nombre
+
+  Clase 2:  Logramos seleccionar desde un archivo js con el comando querySelector; un objeto del DOM
+            atributos DATA: para no perder refercia entre el cambio de clases sobre una etiqueta.
+            Tambien podemos realizar instrucciones al realizar un evento. En este caso fue por medio del evento click en el elemento boton.
+            una vez realizado el evento de hacer click, capturar el elemento de la tag input dentro de la funcion del evento anterior.
+
+            Para que la pagina no se actualice cada vez que lleno formularos (inputs), en la funcion del evento buton, agrego como parametro el evento hecho por la pc, luego acciono un comando el cual inpide que se refresque por defecto.
+
+            En html todo es representado por objetos, los cuales por medio de metodos o funciones podemos ejecutar para que realice cierta accion.
 -->
