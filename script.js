@@ -1,4 +1,6 @@
-( () => {
+import { checkComplete } from "./components/checkComplete.js";
+import { deleteIcon } from "./components/deleteicon.js";
+
 //seleccionamos dos elementos del DOM
 const btn = document.querySelector('[data-form-btn]');
 //creamos una variable constante, que no varia, para obtener el elemento referenciado entre parentesis
@@ -29,37 +31,17 @@ const createTask = (evento) =>{
     titleTask.innerText = value;
     //introducimos el elemento titleTask en taskcontent
     taskContent.appendChild(titleTask);
-
-    const content = 
-        `<i class="fas fa-trash-alt trashIcon icon"></i>`;
-
     //task.innerHTML = content;
     //introducimos el elemento taskContent en task
-    task.appendChild(taskContent)
+    task.appendChild(taskContent);
+    task.appendChild(deleteIcon());
     //introducimos el elemento task en list
     list.appendChild(task);
-}
+};
 //cuando usemos el event "click", las instrucciones dentro de la funcion createTask; seran usadas
 btn.addEventListener('click', createTask);
 
-//METODOS
-//creo elemento i (tag). Le añado clases, y un evento como disparador
-const checkComplete = () => {
-    const i = document.createElement('i');
-    i.classList.add('far', 'fa-check-square', 'icon');
-    i.addEventListener('click', completeTask);
-    //aparentemen hay que agregar clase por clase al elemento en variable i
-    return i;
-}
-//modificando el check, con un evento le añado o visceversa las clases para que se modifique
-const completeTask = (event) =>{
-    const element = event.target;
-    element.classList.toggle('fas');
-    element.classList.toggle('completeIcon');
-    element.classList.toggle('far');
-};
 
-})();
 //encapsulamos el metodo en una variable y la pasamos como parametro para el evento btn
 /*
 task.innerHTML = content
