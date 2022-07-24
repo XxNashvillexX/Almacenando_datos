@@ -36,8 +36,7 @@
             </button>
           </form>
         </div>
-        <ul class="cardsList" data-list>
-        </ul>
+        <ul class="cardsList" data-list></ul>
       </div>
     </main>
     <script src="script.js"></script>
@@ -71,4 +70,15 @@ document.querySelectorAll(“selector”) regresa todos los elementos con el mis
             Al tener una variable que contenga esa porcion de codigo HTML, vamos agregar la variable que contiene los datos del input. Y luego para que esa porcion se añada a la tag task, la pasamos de variable a variable.
 
             una variable que contenga el elemento desde HTML, otra que creara un nuevo elemento, el cual sera dado desde otra variable que tendra una porcion de codigo HTML en JS.
+
+            Todos los elementos en nuestro árbol de DOM son nodos y todos los nodos pueden ser accedidos vía JavaScript. Los nodos pueden ser eliminados, creados o modificados. Durante el curso utilizamos el método appendChild que siempre es implementado al final del nodo, para colocar un nodo hijo dentro del nodo padre.
+
+            Existen otros métodos que podemos utilizar para manipular nodos:
+
+            insertBefore(padre, hijo): Coloca un nodo antes del otro
+            replaceChild(elemento1, elemento2): Sustituye el nodo del elemento 1 por el nodo del elemento 2
+            removeChild(elemento): Remueve un nodo del árbol
+
+  Clase 4:  Una porcion del codigo HTML en JS, lo encapsularemos en una funcion, la cual se encargara de crear al
+            elemento.
 -->
