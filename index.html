@@ -31,6 +31,7 @@
               autocomplete="off"
               data-form-input
             />
+            <input type="datetime-local" data-form-date placeholder="YYYY/MM/DD"/>
             <button type="submit" class="btnCreate" data-form-btn>
               Agregar <i class="fas fa-plus-circle"></i>
             </button>
@@ -39,6 +40,7 @@
         <ul class="cardsList" data-list></ul>
       </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
     <script type="module" src="script.js"></script>
   </body>
 </html>
@@ -79,6 +81,18 @@ document.querySelectorAll(“selector”) regresa todos los elementos con el mis
             replaceChild(elemento1, elemento2): Sustituye el nodo del elemento 1 por el nodo del elemento 2
             removeChild(elemento): Remueve un nodo del árbol
 
-  Clase 4:  Una porcion del codigo HTML en JS, lo encapsularemos en una funcion, la cual se encargara de crear al
-            elemento.
+  Clase 4 y 5:  Una porcion del codigo HTML en JS, lo encapsularemos en una funcion, la cual se encargara de crear al
+                elemento. Luego cada metodo sera ubicado en otros archivos js, e importados desde el index.
+
+  Clase 6:      Agregamos un elemento (input), el cual nos dara fechas, con el comando date time local.
+                Formateamos la fecha (estilo). Para eso necesitamos una libreria; su url sera usada en una tag script.
+                Se formatea como una funcion en el archivo JS.
+                Intetaremos guardar datos en la pagina con API, de dos formas distintas: sessionStorage, localStorage
+
+                sessionStorage:almacena datos string no objetos, para eso hay que parcearlos con un metodo. La desventaja
+                               con esta forma es que la informacion almacenada se pierde al cerrar pestaña.
+                               ejemplo: sessionStorage.setItem('tasks',JSON.stringify(taskObj));
+
+                localStorage: no se limita cuando se cierra la pestaña, por medio de array. Pero cuando recargamos y creamos
+                              mas datos para guardar, se sobreescribe el array
 -->
