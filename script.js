@@ -1,5 +1,5 @@
 import { addTask } from "./components/addTask.js";
-import { readTasks } from "./components/readTasks.js";
+import { displayTasks } from "./components/readTasks.js";
 
 //seleccionamos dos elementos del DOM
 const btn = document.querySelector('[data-form-btn]');
@@ -8,7 +8,7 @@ const btn = document.querySelector('[data-form-btn]');
 //cuando usemos el event "click", las instrucciones dentro de la funcion createTask; seran usadas
 btn.addEventListener('click', addTask);
 
-readTasks();
+displayTasks();
 
 //encapsulamos el metodo en una variable y la pasamos como parametro para el evento btn
 /*

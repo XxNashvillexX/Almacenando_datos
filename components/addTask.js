@@ -1,5 +1,7 @@
+import { orderDates } from "../services/date.js";
 import { checkComplete } from "./checkComplete.js";
 import { deleteIcon } from "./deleteicon.js";
+import { displayTasks } from "./readTasks.js";
 
 export const addTask = (evento) =>{
     evento.preventDefault();    //metodo
@@ -17,7 +19,11 @@ export const addTask = (evento) =>{
     //dando formato a la fecha en la variable date
     const dateFormat = moment(date).format('DD/MM/YYYY');
 
-    //tambien se le da un array como inicio, en caso de dar null
+    //creamos un if para agregar tareas validas
+    if(value == "" || date == "")
+    {
+        return;
+    }
     //el valor de input en html se vacia
     input.value = '';
     calendar.value = '';
@@ -27,6 +33,8 @@ export const addTask = (evento) =>{
         dateFormat,
     };
 
+    list.innerHTML = '';
+
     //variable tipo array para almacenar datos en localStorage. Con funciones para parsear a objeto el string.
     const taskList = JSON.parse(localStorage.getItem('tasks')) || [];
     //usando el array para almacenar los datos
@@ -34,10 +42,7 @@ export const addTask = (evento) =>{
     //llamada para almacenar los datos
     localStorage.setItem('tasks',JSON.stringify(taskList));
 
-
-    const task = createTask(taskObj);
-    //introducimos el elemento task en list
-    list.appendChild(task);
+    displayTasks();
 }
 
 //Arrow function o funcion anonima
