@@ -10,11 +10,17 @@ export const uniqueDates = (tasks) => {
 
     return unique;
 };
-
+//ordenando las fechas en el array
 export const orderDates = (dates) => {
-    dates.sort((a, b) => {
+    return dates.sort((a,b) => {
+        //comparamos los elementos del array para ordernarlos
         const firstDate = moment(a, 'DD/MM/YYYY')
         const secondDate = moment(b, 'DD/MM/YYYY')
+        
         return firstDate - secondDate
     })
 };
+
+/*
+Metodo sort, ordena los elementos de un array por orden alfabetico o numerico
+*/

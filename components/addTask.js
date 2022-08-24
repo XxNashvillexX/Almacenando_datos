@@ -1,6 +1,6 @@
 import { orderDates } from "../services/date.js";
 import { checkComplete } from "./checkComplete.js";
-import { deleteIcon } from "./deleteicon.js";
+import  deleteIcon  from "./deleteicon.js";
 import { displayTasks } from "./readTasks.js";
 
 export const addTask = (evento) =>{
@@ -27,10 +27,15 @@ export const addTask = (evento) =>{
     //el valor de input en html se vacia
     input.value = '';
     calendar.value = '';
+    //constante (flag) para modificar el check. Por defecto es false
+    const complete = false;
+
     //variable (objeto) para almacenar datos
     const taskObj = {
         value,
         dateFormat,
+        complete,
+        id: uuid.v4()
     };
 
     list.innerHTML = '';
@@ -46,7 +51,7 @@ export const addTask = (evento) =>{
 }
 
 //Arrow function o funcion anonima
-export const createTask = ({value,dateFormat}) => {
+export const createTask = ({value, dateFormat, complete, id}) => {
     //task contendra una tag "li"
     const task = document.createElement("li");
           //le agregamos una clase "card"
@@ -54,6 +59,15 @@ export const createTask = ({value,dateFormat}) => {
 
     //taskContent tendra un elemento "div"
     const taskContent = document.createElement("div");
+    //variable check hara la funcion para saber el estado de task
+    const check = checkComplete(id);
+    //por cada modificacion del valor de complete se formatea el estilo css
+    if(complete)
+    {
+        check.classList.toggle('fas');
+        check.classList.toggle('completeIcon');
+        check.classList.toggle('far');
+    }
 
     //titleTask tendra un elemento "span"
     const titleTask = document.createElement("span");
@@ -62,7 +76,7 @@ export const createTask = ({value,dateFormat}) => {
           //alojamos el valor de la variable value
           titleTask.innerText = value;
           //le asignamos un elemento hijo, para cambiar el comportamiento de el check
-          taskContent.appendChild(checkComplete());
+          taskContent.appendChild(check);
           //introducimos el elemento titleTask en taskcontent
           taskContent.appendChild(titleTask);
 
@@ -73,7 +87,7 @@ export const createTask = ({value,dateFormat}) => {
           //introducimos el elemento taskContent en task
           task.appendChild(taskContent);
           task.appendChild(dateElement);
-          task.appendChild(deleteIcon());
+          task.appendChild(deleteIcon(id));
 
     return task;
 };
@@ -87,4 +101,7 @@ Con eso, le decimos a la aplicación que en caso de que localStorage este con da
 
 true || false // true
 false || true // true
+
+Usaremos una libreria para identificar los objetos se que se agreguen
+
 */
